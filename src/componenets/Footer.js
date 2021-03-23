@@ -3,7 +3,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
 const useStyles = makeStyles((theme) => ({
 	root: {
 		display: 'flex',
@@ -12,16 +11,10 @@ const useStyles = makeStyles((theme) => ({
 	},
 	main: {
 		marginTop: theme.spacing(8),
-		marginBottom: theme.spacing(2),
-		backgroundColor: 'linear-gradient(45deg,#000,#444)',
 	},
 	footer: {
-		padding: theme.spacing(3, 2),
+		padding: theme.spacing(1, 4),
 		marginTop: 'auto',
-		backgroundColor:
-			theme.palette.type == 'light'
-				? theme.palette.grey[200]
-				: theme.palette.blue[800],
 	},
 }));
 
@@ -42,8 +35,8 @@ export default function StickyFooter() {
 					Sticky footer placeholder.
 				</Typography>
 			</Container>
-			<footer className={classes.footer}>
-				<Container maxWidth="sm">
+			<footer>
+				<Container maxWidth="sm" className={classes.footer}>
 					<Typography variant="body1">
 						My sticky footer can be found here.
 					</Typography>
