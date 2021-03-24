@@ -6,11 +6,7 @@ import Videos from "./api/videos";
 function App() {
     return (
         <div className="App">
-            react
             <Chatbox />
-            <Resources />
-            <Phrases />
-            <Videos />
         </div>
     );
 }
