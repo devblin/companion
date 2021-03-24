@@ -1,7 +1,4 @@
 import React, { useState } from 'react'
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
@@ -59,13 +56,6 @@ export default function Chatbox() {
         <div className={classes.chatBoxContainer}>
             <Grid container spacing={1} justify="center" style={{maxWidth:'700px'}}>
                 <Grid item xs={12} sm={9}>
-                    {/* <Paper>
-                        <AppBar position='sticky' className={classes.heading}>
-                            <Toolbar className={classes.heading}>
-                                <Typography variant='h6'>Chat Area</Typography>
-                            </Toolbar>
-                        </AppBar>    
-                    </Paper> */}
                     <Paper>
                         <div className={classes.messageArea}>
                             <MessageArea messages={messages} className={classes.messageArea}/>
