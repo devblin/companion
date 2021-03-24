@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		flexDirection: 'column',
 		minHeight: '100vh',
+		width: '100%'
 	},
 	main: {
 		marginTop: theme.spacing(8),
@@ -15,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
 	footer: {
 		padding: theme.spacing(1, 4),
 		marginTop: 'auto',
+		textAlign: 'center'
 	},
 }));
 
@@ -22,26 +24,12 @@ export default function StickyFooter() {
 	const classes = useStyles();
 
 	return (
-		<div className={classes.root}>
-			<CssBaseline />
-			<Container component="main" className={classes.main} maxWidth="sm">
-				<Typography variant="h2" component="h1" gutterBottom>
-					Sticky footer
-				</Typography>
-				<Typography variant="h5" component="h2" gutterBottom>
-					Content
-				</Typography>
+		<div>
+			<Container maxWidth="sm" className={classes.footer}>
 				<Typography variant="body1">
-					Sticky footer placeholder.
+					My sticky footer can be found here.
 				</Typography>
 			</Container>
-			<footer>
-				<Container maxWidth="sm" className={classes.footer}>
-					<Typography variant="body1">
-						My sticky footer can be found here.
-					</Typography>
-				</Container>
-			</footer>
 		</div>
 	);
 }
