@@ -12,6 +12,27 @@ export const useStyles = makeStyles(() => ({
         display:'flex',
         height:'70vh',
         maxHeight:'800px',
-        minHeight:'450px'
+        minHeight:'450px',
+        overflowY:'auto'
+    },
+    messageBox: {
+        maxWidth: 275,
+        width: 'auto',
+        margin: 5,
+        height: 'auto',
+        textAlign:'left',
+    },
+    messageBoxTitle: {
+        fontSize: 12,
+    },
+    messageAreaContainer: {
+        width:'100%', 
+        display:'grid', 
+        height:'min-content', 
+        overflowY:'auto'
+    },
+    chatBoxContainer: {
+        display:'flex', 
+        justifyContent:'center'
     }
 }));
