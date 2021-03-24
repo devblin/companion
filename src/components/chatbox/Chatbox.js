@@ -12,59 +12,83 @@ import { withStyles } from '@material-ui/core/styles';
 import {useStyles} from './style';
 import MessageArea from './MessageArea';
 
+const pd = require("paralleldots");
+pd.apiKey = process.env.REACT_APP_PARALLELDOTS_API;
 
 class Chatbox extends Component {
     constructor(props) {
         super(props)
     
         this.state = {
-            message:''
+            messages: []
+        }
+
+        this.sendMessage = this.sendMessage.bind(this);
+    }
+
+    sendMessage() {
+        let messageBox = document.getElementById("text-box");
+        let messageVal = messageBox.value;
+
+        if(messageVal) {
+            let newMessages = [...this.state.messages, {type:'You', message:messageVal}];
+            this.setState({
+                messages: newMessages
+            })
+            messageBox.value = "";
+
+            pd.emotion(messageVal).then((res) => {
+                let emotions = JSON.parse(res).emotion;
+                console.log(emotions);
+                let maxEmotion = JSON.parse(this.getMaxEmotion(emotions));
+
+                let botMsg = "Are you, " + maxEmotion.emotion;
+
+                newMessages = [...newMessages, {type:'Bot', message:botMsg}];
+                this.setState({
+                    messages: newMessages
+                })
+            }).catch((e) => {
+                console.log(e);
+            });
         }
     }
-    handleChange=(e)=>{
-        this.setState({message: e.target.value});
+
+    getMaxEmotion(emotions) {
+        let maxEmotion = { emotion:'', score:0 };
+        for(let e in emotions) {
+            if(emotions[e] > maxEmotion.score) {
+                maxEmotion.score = emotions[e];
+                maxEmotion.emotion = e;
+            }
+        }
+        console.log(maxEmotion);
+        return JSON.stringify(maxEmotion);
     }
-    handleSubmit=(e)=>{
-        e.preventDefault();
-        console.log(this.state.message)
-    }
+
     render(){
         const {classes}=this.props;
         return (
-            <div>
+            <div className={classes.chatBoxContainer}>
                 <Grid container spacing={1} justify="center">
-                    <Grid item xs={11} s={10} md={9} lg={6}>
+                    <Grid item xs={12} sm={9} md={6} lg={6}>
                         <Paper>
-                            <AppBar position='sticky' className={classes.heading}>
-                                <Toolbar className={classes.heading}>
-                                    <Typography variant='h6'>Chat Area</Typography>
-                                </Toolbar>
-                            </AppBar>    
-                        </Paper>
-                        <Paper>
-                            <div className={classes.messageArea}>
-                                <MessageArea className={classes.messageArea}/>
+                            <div className={classes.messageArea} style={{width:"100%"}}>
+                                <MessageArea messages={this.state.messages}/>
                             </div>
-                            <Grid container>
-                                <form onSubmit={this.handleSubmit} className={classes.inputForm}>
-                                    <Grid item xs={10}>
-                                        <TextField 
-                                            id="standard-basic" 
-                                            placeholder="Enter Text" 
-                                            margin="normal"
-                                            className ={classes.textBox}
-
-                                            fullWidth={true}
-                                            onChange={this.handleChange}
-                                        />
-                                    </Grid>
-                                    <Grid item xs={2}>
-                                        <IconButton aria-label='add' color='primary' type='submit'>
-                                            <SendIcon />
-                                        </IconButton>
-                                    </Grid>
-                                </form>
-                            </Grid>
+                            <div style={{display:'flex', padding:10}}>
+                                <TextField 
+                                    id="text-box" 
+                                    placeholder="Enter Text" 
+                                    margin="normal"
+                                    className ={classes.textBox}
+                                    variant="outlined"
+                                    fullWidth={true}
+                                />
+                                <IconButton onClick={this.sendMessage} aria-label='add' color='primary' type='submit'>
+                                    <SendIcon />
+                                </IconButton>
+                            </div>
                         </Paper>  
                     </Grid>  
                 </Grid>
