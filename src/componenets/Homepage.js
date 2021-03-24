@@ -8,7 +8,6 @@ import { Box } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
 	main: {
 		marginTop: theme.spacing(6),
-		marginBottom: theme.spacing(2),
 		minHeight: '100vh',
 	},
 }));
@@ -22,7 +21,10 @@ const Navbar = () => {
 				</Toolbar>
 			</AppBar>
 			<Box bgcolor="info.main" className={classes.main}>
-				<Container>Hii</Container>
+				<Container>
+					<br></br>
+					<h1>Hi</h1>
+				</Container>
 			</Box>
 		</React.Fragment>
 	);
