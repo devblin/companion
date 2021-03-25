@@ -13,6 +13,9 @@ import {useStyles} from './style';
 import MessageArea from './MessageArea';
 
 const pd = require("paralleldots");
+const axios = require("axios");
+const apiUrl = "https://apis.paralleldots.com/v4/emotion";
+const api_key = process.env.REACT_APP_PARALLELDOTS_API;
 pd.apiKey = process.env.REACT_APP_PARALLELDOTS_API;
 
 class Chatbox extends Component {
@@ -37,7 +40,10 @@ class Chatbox extends Component {
             })
             messageBox.value = "";
 
-            pd.emotion(messageVal).then((res) => {
+            axios.post(apiUrl, {
+                api_key: api_key,
+                text: messageVal
+            }).then((res) => {
                 let emotions = JSON.parse(res).emotion;
                 console.log(emotions);
                 let maxEmotion = JSON.parse(this.getMaxEmotion(emotions));
@@ -50,7 +56,21 @@ class Chatbox extends Component {
                 })
             }).catch((e) => {
                 console.log(e);
-            });
+            })
+            // pd.emotion(messageVal).then((res) => {
+            //     let emotions = JSON.parse(res).emotion;
+            //     console.log(emotions);
+            //     let maxEmotion = JSON.parse(this.getMaxEmotion(emotions));
+
+            //     let botMsg = "Are you, " + maxEmotion.emotion;
+
+            //     newMessages = [...newMessages, {type:'Bot', message:botMsg}];
+            //     this.setState({
+            //         messages: newMessages
+            //     })
+            // }).catch((e) => {
+            //     console.log(e);
+            // });
         }
     }
 
