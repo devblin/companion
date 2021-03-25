@@ -1,6 +1,6 @@
 import "./App.css";
 import Chatbox from "./components/chatbox/Chatbox";
-import Navbar from "./components/Homepage";
+import Homepage from "./components/Homepage";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Route path="/" exact component={Navbar} />
+        <Route path="/" exact component={Homepage} />
         <Route path="/Chat" exact component={Chatbox} />
       </Router>
       <Footer />
