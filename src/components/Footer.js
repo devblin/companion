@@ -16,7 +16,7 @@ export default function StickyFooter() {
     return (
         <div>
             <Box maxWidth="sm" className={classes.footer} variant="primary">
-                <Typography variant="body1">Footer Notes</Typography>
+                <Typography variant="body1">Made with ❤ </Typography>
             </Box>
         </div>
     );
