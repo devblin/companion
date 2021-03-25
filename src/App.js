@@ -1,12 +1,19 @@
 import "./App.css";
 import Chatbox from "./components/chatbox/Chatbox";
-import Resources from "./api/resources";
-import Phrases from "./api/phrases";
-import Videos from "./api/videos";
+import Homepage from "./components/Homepage";
+import Footer from "./components/Footer";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import "./App.css";
+
 function App() {
     return (
         <div className="App">
-            <Chatbox />
+            <Router>
+                <Route path="/" exact component={Homepage} />
+                <Route path="/Chat" exact component={Chatbox} />
+            </Router>
+            <Footer />
         </div>
     );
 }
