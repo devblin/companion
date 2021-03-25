@@ -34,5 +34,7 @@ export const useStyles =() => ({
     chatBoxContainer: {
         display:'flex', 
         justifyContent:'center',
+        width:'99%',
+        padding: '20px 0 30px 0'
     }
 });

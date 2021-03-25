@@ -1,7 +1,4 @@
 import React, {Component} from 'react'
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
@@ -12,6 +9,8 @@ import { withStyles } from '@material-ui/core/styles';
 import {useStyles} from './style';
 import MessageArea from './MessageArea';
 
+import questions from '../questions';
+
 const pd = require("paralleldots");
 pd.apiKey = process.env.REACT_APP_PARALLELDOTS_API;
 
@@ -20,7 +19,8 @@ class Chatbox extends Component {
         super(props)
     
         this.state = {
-            messages: []
+            messages: [],
+            index: 0
         }
 
         this.sendMessage = this.sendMessage.bind(this);
@@ -38,11 +38,28 @@ class Chatbox extends Component {
             messageBox.value = "";
 
             pd.emotion(messageVal).then((res) => {
+                let question;
+                let index = Math.floor(Math.random() * 5);
                 let emotions = JSON.parse(res).emotion;
                 console.log(emotions);
                 let maxEmotion = JSON.parse(this.getMaxEmotion(emotions));
 
-                let botMsg = "Are you, " + maxEmotion.emotion;
+                if(this.state.index < 2) {
+                    question = questions.Intro[this.state.index];
+                }
+                else if(maxEmotion.score > 0.5) {
+                    console.log('Share Resources', 'Nice to meet you, human');
+                    question = "Nice to meet you, human :)";
+                }
+                else {
+                    question = questions[maxEmotion.emotion][index];
+                }
+                console.log(questions[maxEmotion.emotion]);
+                this.setState({
+                    index: ++this.state.index
+                })
+                console.log(question);
+                let botMsg = question;
 
                 newMessages = [...newMessages, {type:'Bot', message:botMsg}];
                 this.setState({
