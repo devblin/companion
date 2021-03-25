@@ -2871,6 +2871,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 "bn.js@^4.1.0":
 =======
@@ -2890,10 +2891,16 @@
 
 "bn.js@^4.1.0":
 >>>>>>> b01ca61... updated footer: removed redundant content
+=======
+
+
+"bn.js@^4.1.0":
+>>>>>>> 9a8ac633398f04bfd23abdd117f870b74948588e
   "integrity" "sha512-c98Bf3tPniI+scsdk237ku1Dc3ujXQTSgyiPUDEOe7tRkhrqridvh8klBv0HCEso1OLOYcHuCv/cS6DNxKH+ZA=="
   "resolved" "https://registry.npmjs.org/bn.js/-/bn.js-4.12.0.tgz"
   "version" "4.12.0"
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2914,6 +2921,9 @@
 >>>>>>> 31d5859... updated footer: removed redundant content
 =======
 >>>>>>> b01ca61... updated footer: removed redundant content
+=======
+
+>>>>>>> 9a8ac633398f04bfd23abdd117f870b74948588e
 "bn.js@^5.0.0", "bn.js@^5.1.1":
   "integrity" "sha512-D7iWRBvnZE8ecXiLj/9wbxH7Tk79fAh8IHaTNq1RWRixsS02W+5qS+iE9yq6RYl0asXx5tw0bLhmT5pIfbSquw=="
   "resolved" "https://registry.npmjs.org/bn.js/-/bn.js-5.2.0.tgz"
@@ -4661,11 +4671,8 @@
   "resolved" "https://registry.npmjs.org/escape-html/-/escape-html-1.0.3.tgz"
   "version" "1.0.3"
 
-"escape-string-regexp@^1.0.5":
-  "integrity" "sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ="
-  "resolved" "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz"
-  "version" "1.0.5"
 
+<<<<<<< HEAD
 "escape-string-regexp@^2.0.0":
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4703,12 +4710,18 @@
 <<<<<<< HEAD
 >>>>>>> 31d5859... updated footer: removed redundant content
 =======
+=======
+>>>>>>> 9a8ac633398f04bfd23abdd117f870b74948588e
 "escape-string-regexp@2.0.0":
   "integrity" "sha512-UpzcLCXolUWcNu5HtVMHYdXJjArjsF9C0aNnquZYY4uW/Vu0miy5YoWvbV345HauVvcAUnpRuhMMcqTcGOY2+w=="
   "resolved" "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-2.0.0.tgz"
   "version" "2.0.0"
 
+<<<<<<< HEAD
 >>>>>>> b01ca61... updated footer: removed redundant content
+=======
+
+>>>>>>> 9a8ac633398f04bfd23abdd117f870b74948588e
 "escodegen@^2.0.0":
   "integrity" "sha512-mmHKys/C8BFUGI+MAWNcSYoORYLMdPzjrknd2Vc+bUsjN5bXcr8EhrNB+UTqfL1y3I9c4fw2ihgtMPQLBRiQxw=="
   "resolved" "https://registry.npmjs.org/escodegen/-/escodegen-2.0.0.tgz"
@@ -9906,6 +9919,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "request@^2.85.0", "request@^2.88.2":
 =======
 "request@^2.88.2":
@@ -9916,6 +9930,10 @@
 =======
 "request@^2.88.2":
 >>>>>>> b01ca61... updated footer: removed redundant content
+=======
+"request@^2.88.2":
+>>>>>>> 6a7d7d50647fca0f1c7acf3767276148e2c63e2b
+>>>>>>> 9a8ac633398f04bfd23abdd117f870b74948588e
   "integrity" "sha512-MsvtOrfG9ZcrOwAW+Qi+F6HbD0CWXEh9ou77uOb7FM2WPhwT7smM833PzanhJLsgXjN89Ir6V2PczXNnMpwKhw=="
   "resolved" "https://registry.npmjs.org/request/-/request-2.88.2.tgz"
   "version" "2.88.2"
